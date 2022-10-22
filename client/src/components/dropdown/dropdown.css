@@ -1,0 +1,8 @@
+.dropdown {
+    position: fixed;
+    background-color: white;
+    border-radius: 5px;
+    transform: translate(-50%, 15px);
+    width: 100px;
+    box-sizing: border-box;
+ }
