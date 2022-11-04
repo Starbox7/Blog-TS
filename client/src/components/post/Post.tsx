@@ -15,7 +15,7 @@ function Post() {
                         </Link>
                     </span>
                     <Link to={`/$12345`} className="link">
-                        <strong>Starbox7</strong>
+                        <strong>Starbox</strong>
                     </Link>
                 </div>
                 <div className="postHeaderRight">

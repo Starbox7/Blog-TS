@@ -14,8 +14,8 @@ export default () => {
                     <i className="replyIcon fa-regular fa-bookmark"></i>
                 </div>
             </div>
-            <div className="postDescriotion">
-                <span><strong>Starbox7</strong></span>
+            <div className="postDescription">
+                <span><strong>Starbox</strong></span>
             </div>
             <div className="replyList">
                 <div className="postDescription" style={{color:"#888"}}>댓글확인</div>
