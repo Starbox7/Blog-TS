@@ -19,7 +19,7 @@ user_id : {
 },
 postPic: {
     type: Array,
-    required: true
+   // required: true
 }
 }, {timestamps: true})
 

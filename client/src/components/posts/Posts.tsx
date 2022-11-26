@@ -1,10 +1,17 @@
 import Post from "../post/Post"
 import "./posts.css"
 
-function Posts() {
+import { IPost } from "../../interface"
+interface IProps {
+    posts: Array<IPost>
+}
+
+function Posts({ posts }: IProps) {
     return (
         <div className="posts">
-            <Post/>
+            {Array.isArray(posts) && posts.map((data: IPost, index) => (
+                <Post post={data} key={index}/>
+            ))}
         </div>
     )
 }

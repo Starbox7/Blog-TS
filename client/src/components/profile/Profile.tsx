@@ -1,9 +1,13 @@
 import "./profile.css"
 
-export default function Profile () {
+interface ImageUrl {
+    name: string;
+}
+
+export default function Profile ({name}: ImageUrl) {
     return (
         <div className="profile">
-            <img src="https://picsum.photos/100" alt="" />
+            <img src={name} alt="" />
         </div>
     )
 }

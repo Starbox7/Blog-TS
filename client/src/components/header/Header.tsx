@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom"
-import React, { useState } from "react"
+import { useState, useContext } from "react"
 import Dropdown from "../dropdown/Dropdown"
 import "./header.css"
 import Profile from "../profile/Profile"
+import { LoginContext } from "../../context/LoginContext"
+import { PF } from "../../settings"
 
 function Header() {
     const [dropdown, setDropdown] = useState<Boolean>(false)
+    const {state, dispatch} = useContext(LoginContext)
     return (
         <div className="header">
             <div className="headerLeft">
@@ -43,11 +46,11 @@ function Header() {
                     <li className="headerListItem">
                         <div className="headerListItemProfile">
                             <span onClick={() => setDropdown(!dropdown)}>
-                                <Profile/>
+                                <Profile name={state.user.profilePic? PF + state.user.profilePic : "/no.jpg"}></Profile>
                             </span>
                             <Dropdown visible={dropdown}>
                                 <ul>
-                                    <Link to={`/:id`} className="link">
+                                    <Link to={`/${state.user._id}`} className="link">
                                         <li>
                                             <i className="fa-solid fa-user"></i>
                                             Profile
@@ -60,7 +63,7 @@ function Header() {
                                         </li>
                                     </Link>
                                     <hr />
-                                    <li>
+                                    <li onClick={() => dispatch({type: "LOGOUT"})}>
                                         Logout
                                     </li>
                                 </ul>
